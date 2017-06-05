@@ -7,17 +7,18 @@ import { Http } from '@angular/http'
 import config from '../../config'
 import { IUser } from './user.interface'
 import { UserEditComponent } from './user-edit.component'
+const template = require('./users.html')
 
 @Component({
   selector: 'users',
-  template: require('./users.html')
+  template
 })
 export class UsersComponent implements OnInit {
   dialogRef: MdDialogRef<UserEditComponent> = null
   users: Array<IUser> = null
   filteredUsers: Array<IUser> = []
   filter = {
-    lastName: ''
+    firstName: ''
   }
 
   constructor(
