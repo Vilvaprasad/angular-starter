@@ -13,12 +13,11 @@ The application uses Angular 4, Material Design & TypeScript - documentation can
 
 [TypeScript](http://typescriptlang.org)
 
-The app boilerplate for this aoo is forked from angular-starter project.  The readme for this is appended below the task lists.
+The app boilerplate for this app is forked from angular-starter project.  The readme for this is appended below the task lists.
 
-You will need to Please fork this repository then commit changes for the following issues and new features. Most of the code you will
-need to edit is within `src/app/users` folder.
+You will need to fork this repository then commit changes for the following issues and new features. Most of the code you will need to edit is within `src/app/users` folder.
 
-To run the client in development mode you will need to do a packahe install `npm install` then enter `npm start`.
+To run the client in development mode you will need to do a package install `npm install` then enter `npm start`.
 
 ## Simple Mock API Server
 In order to complete the tasks you will need a mock API server to be running so that the client can communicate with the API.
@@ -26,11 +25,11 @@ The api is simple and has no validation.
 
 `npm run api`
 
-The mock API is hosted at
+The mock API will be hosted at
 
-`http://localhost:8090/users/:id`
+`http://localhost:8090/users/:id` with `:id` being a template for user id.
 
-The API supports the following http methods GET, PUT, DELETE.  Request body is expected to be in json format.
+The API supports the following http methods GET, PUT, DELETE.  Request body is expected to be in json format.  The User data format can be found within the TypeScript interface IUser.
 
 ## Task/Issue descriptions
 
@@ -62,10 +61,11 @@ The API supports the following http methods GET, PUT, DELETE.  Request body is e
 
 * Users Page: The application users have decided that they would like to click a button delete a user
   * Nice to have: Confirm the decision before deleting the user.
+  * The client should request to delete the user
   * The user should be removed from client side list when persist is done
 
 * About Page: The application users have decided that they would like an `About Site` page
-  * Add this page/component.  The page should contain a heading & some generic text and use Angular Material Design to dislay consitantly with users page
+  * Add this page/component.  The page should contain a heading & some generic text and use Angular Material Design to dipslay consitantly with users page
   * The page should be linked in navigation header
 
 
