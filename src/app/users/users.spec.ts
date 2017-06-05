@@ -13,23 +13,26 @@ import {
 } from '@angular/http'
 import { MockBackend } from '@angular/http/testing'
 
+class MdDialog {
+
+}
+
 /**
  * Load the implementations that should be tested.
  */
-import { AppState } from '../app.service'
-import { HomeComponent } from './home.component'
-import { Title } from './title'
+import { UsersComponent } from './users.component'
+
 
 describe(`Home`, () => {
-  let comp: HomeComponent
-  let fixture: ComponentFixture<HomeComponent>
+  let comp: UsersComponent
+  let fixture: ComponentFixture<UsersComponent>
 
   /**
    * async beforeEach.
    */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent],
+      declarations: [UsersComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         BaseRequestOptions,
@@ -41,8 +44,7 @@ describe(`Home`, () => {
           },
           deps: [MockBackend, BaseRequestOptions]
         },
-        AppState,
-        Title,
+        MdDialog
       ]
     })
     /**
@@ -55,7 +57,7 @@ describe(`Home`, () => {
    * Synchronous beforeEach.
    */
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent)
+    fixture = TestBed.createComponent(UsersComponent)
     comp = fixture.componentInstance
 
     /**
@@ -64,20 +66,6 @@ describe(`Home`, () => {
     fixture.detectChanges()
   })
 
-  it('should have default data', () => {
-    expect(comp.localState).toEqual({ value: '' })
-  })
 
-  it('should have a title', () => {
-    expect(!!comp.title).toEqual(true)
-  })
-
-  it('should log ngOnInit', () => {
-    spyOn(console, 'log')
-    expect(console.log).not.toHaveBeenCalled()
-
-    comp.ngOnInit()
-    expect(console.log).toHaveBeenCalled()
-  })
 
 })

@@ -1,24 +1,73 @@
-<p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals?utm_source=github-angular2-webpack-starter&utm_medium=open-source&utm_campaign=webpackstarter" target="_blank">
-    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
-  </a>
-</p>
 
-___
+# Support Test (Angular/TypeScript)
 
+In order to get setup you will need a Node.js version 5+.  You will be able to find this at the node.js website
 
-[![taylor swift](https://img.shields.io/badge/secured%20by-taylor%20swift-brightgreen.svg)](https://twitter.com/SwiftOnSecurity)
-[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
-[![Build Status](https://travis-ci.org/AngularClass/angular2-webpack-starter.svg?branch=master)](https://travis-ci.org/AngularClass/angular2-webpack-starter)
-[![GitHub version](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter.svg)](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter)
-[![Dependency Status](https://david-dm.org/angularclass/angular2-webpack-starter.svg)](https://david-dm.org/angularclass/angular2-webpack-starter)
-[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/angularclass/angular-2-webpack-starter)
+## Application information
 
-<p align="center">
-  <a href="http://angularclass.com" target="_blank">
-    <img src="https://cloud.githubusercontent.com/assets/1016365/26219144/aa986cfa-3bdb-11e7-9f04-7296dc9ae945.png" alt="Angular Starter with Webpack" width="500" height="320"/>
-  </a>
-</p>
+The application uses Angular 4, Material Design & TypeScript - documentation can be found here:
+
+[Angular](http://angular.io)
+
+[Material](http://material.angular.io)
+
+[TypeScript](http://typescriptlang.org)
+
+The app boilerplate for this aoo is forked from angular-starter project.  The readme for this is appended below the task lists.
+
+You will need to Please fork this repository then commit changes for the following issues and new features. Most of the code you will
+need to edit is within `src/app/users` folder.
+
+To run the client in development mode you will need to do a packahe install `npm install` then enter `npm start`.
+
+## Simple Mock API Server
+In order to complete the tasks you will need a mock API server to be running so that the client can communicate with the API.
+The api is simple and has no validation.
+
+`npm run api`
+
+The mock API is hosted at
+
+`http://localhost:8090/users/:id`
+
+The API supports the following http methods GET, PUT, DELETE.  Request body is expected to be in json format.
+
+## Task/Issue descriptions
+
+### Broken functionality
+
+* Users Page: The users last names are not being displayed in the user list
+* Users Page: The list of users should be filterable by both firstName and lastName
+  * Only one filter is updating the list but that also seems to be broken
+* Users Page: The edit button opens a dialog but no user input fields are being displayed
+* Home Page: The application home button is not working and getting a 404
+
+### New Functionality
+
+* Users Page: The application users have decided that they would like to see the avatars of the users in the list
+  * The images should display as circular thumbnails to the left of the user details.
+
+* Users Page: The application users have decided it would be useful to see the current age of the users in years.
+  * This should be displayed in brackets after the users names
+
+* Users Page: Add the functionality to persist the update to the user using the provided API
+  * After succesful persist it should: close the dialog
+  * After succesful persist it should: then visually update the user in the current users collection.
+
+* Users Page: The application users have decided that thet would like the list to be sortable by first name and last name
+  * Implement this client side only as the client has the full list of current users
+
+* Users Page: The application users have decided that they would only like to see 20 users on screen at once.
+  * Implement users pagination within the client.
+
+* Users Page: The application users have decided that they would like to click a button delete a user
+  * Nice to have: Confirm the decision before deleting the user.
+  * The user should be removed from client side list when persist is done
+
+* About Page: The application users have decided that they would like an `About Site` page
+  * Add this page/component.  The page should contain a heading & some generic text and use Angular Material Design to dislay consitantly with users page
+  * The page should be linked in navigation header
+
 
 # Angular4 Webpack Starter [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/angular2-webpack-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/angular2-webpack-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -53,12 +102,6 @@ This seed repo serves as an Angular starter for anyone looking to get up and run
 > Clone/Download the repo then edit `app.component.ts` inside [`/src/app/app.component.ts`](/src/app/app.component.ts)
 
 ```bash
-# clone our repo
-# --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/AngularClass/angular-starter.git
-
-# change directory to our repo
-cd angular-starter
 
 # install the repo with npm
 npm install
@@ -139,7 +182,7 @@ What you need to run this app:
 * `node` and `npm` (`brew install node`)
 * Ensure you're running the latest versions Node `v6.x.x`+ (or `v7.x.x`) and NPM `3.x.x`+
 
-> If you have `nvm` installed, which is highly recommended (`brew install nvm`) you can do a `nvm install --lts && nvm use` in `$` to run with the latest Node LTS. You can also have this `zsh` done for you [automatically](https://github.com/creationix/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file) 
+> If you have `nvm` installed, which is highly recommended (`brew install nvm`) you can do a `nvm install --lts && nvm use` in `$` to run with the latest Node LTS. You can also have this `zsh` done for you [automatically](https://github.com/creationix/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file)
 
 Once you have those, you should install these globals with `npm install --global`:
 * `webpack` (`npm install --global webpack`)
@@ -267,18 +310,18 @@ We have good experience using these editors:
 * [Sublime Text](http://www.sublimetext.com/3) with [Typescript-Sublime-Plugin](https://github.com/Microsoft/Typescript-Sublime-plugin#installation)
 
 ### Visual Studio Code + Debugger for Chrome
-> Install [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and see docs for instructions to launch Chrome 
+> Install [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and see docs for instructions to launch Chrome
 
 The included `.vscode` automatically connects to the webpack development server on port `3000`.
 
 # Types
 > When you include a module that doesn't include Type Definitions inside of the module you can include external Type Definitions with @types
 
-i.e, to have youtube api support, run this command in terminal: 
+i.e, to have youtube api support, run this command in terminal:
 ```shell
 npm i @types/youtube @types/gapi @types/gapi.youtube
-``` 
-In some cases where your code editor doesn't support Typescript 2 yet or these types weren't listed in ```tsconfig.json```, add these to **"src/custom-typings.d.ts"** to make peace with the compile check: 
+```
+In some cases where your code editor doesn't support Typescript 2 yet or these types weren't listed in ```tsconfig.json```, add these to **"src/custom-typings.d.ts"** to make peace with the compile check:
 ```es6
 import '@types/gapi.youtube';
 import '@types/gapi';
@@ -330,7 +373,7 @@ import * as _ from 'lodash';
   * The `EADDRINUSE` error means the port `3000` is currently being used and `EACCES` is lack of permission for webpack to build files to `./dist/`
 * How to use `sass` for css?
  *  * `loaders: ['raw-loader','sass-loader']` and `@Component({ styleUrls: ['./filename.scss'] })` see Wiki page [How to include SCSS in components](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-SCSS-in-components), or issue [#136](https://github.com/AngularClass/angular2-webpack-starter/issues/136) for more information.
-* How do I test a Service?  
+* How do I test a Service?
   * See issue [#130](https://github.com/AngularClass/angular2-webpack-starter/issues/130#issuecomment-158872648)
 * How do I add `vscode-chrome-debug` support?
   * The VS Code chrome debug extension support can be done via `launch.json` see issue [#144](https://github.com/AngularClass/angular2-webpack-starter/issues/144#issuecomment-164063790)
@@ -355,7 +398,7 @@ import * as _ from 'lodash';
 * node-pre-gyp ERR in npm install (Windows)
   * install Python x86 version between 2.5 and 3.0 on windows see issue [#626](https://github.com/AngularClass/angular2-webpack-starter/issues/626)
 * `Error:Error: Parse tsconfig error [{"messageText":"Unknown compiler option 'lib'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'strictNullChecks'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'baseUrl'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'paths'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'types'.","category":1,"code":5023}]`
-  * remove `node_modules/typescript` and run `npm install typescript@beta`. This repo now uses ts 2.0 
+  * remove `node_modules/typescript` and run `npm install typescript@beta`. This repo now uses ts 2.0
 * "There are multiple modules with names that only differ in casing"
   * change `c:\[path to angular2-webpack-starter]` to `C:\[path to angular2-webpack-starter]` see [926#issuecomment-245223547](https://github.com/AngularClass/angular2-webpack-starter/issues/926#issuecomment-245223547)
 
@@ -370,7 +413,7 @@ import * as _ from 'lodash';
 
 ## Docker
 
-To run project you only need host machine with **operationg system** with installed **git** (to clone this repo) 
+To run project you only need host machine with **operationg system** with installed **git** (to clone this repo)
 and [docker](https://www.docker.com/) and thats all - any other software is non needed
 (other software like node.js etc. will be automatically downloaded and installed inside docker container during build step based on dockerfile).
 
@@ -401,22 +444,22 @@ and lougout and login again.
 
 ### Build image
 
-Because *node.js* is big memory consumer you need 1-2GB RAM or virtual memory to build docker image 
+Because *node.js* is big memory consumer you need 1-2GB RAM or virtual memory to build docker image
 (it was successfully tested on machine with 512MB RAM + 2GB virtual memory - building process take 7min)
 
-Go to main project folder. To build big (~280MB) image which has cached data and is able to **FAST** rebuild  
-(this is good for testing or staging environment) type: 
+Go to main project folder. To build big (~280MB) image which has cached data and is able to **FAST** rebuild
+(this is good for testing or staging environment) type:
 
 `docker build -t angular-starter .`
 
 To build **SMALL** (~20MB) image without cache (so each rebuild will take the same amount of time as first build)
 (this is good for production environment) type:
 
-`docker build --squash="true" -t angular-starter .` 
+`docker build --squash="true" -t angular-starter .`
 
-The **angular-starter** name used in above commands is only example image name. 
+The **angular-starter** name used in above commands is only example image name.
 To remove intermediate images created by docker on build process, type:
- 
+
 `docker rmi -f $(docker images -f "dangling=true" -q)`
 
 ### Run image
@@ -431,20 +474,20 @@ And that's all, you can open browser and go to [localhost:8080](localhost:8080).
 
 If you wan't run image as virtual-host on sub-domain you must setup [proxy](https://github.com/jwilder/nginx-proxy)
 . You should install proxy and set sub-domain in this way:
- 
+
  ```
  docker pull jwilder/nginx-proxy:alpine
  docker run -d -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy:alpine
  ```
- 
+
  And in your `/etc/hosts` file (linux) add line: `127.0.0.1 angular-starter.your-domain.com` or in yor hosting add
  folowwing DNS record (wildchar `*` is handy because when you add new sub-domain in future, you don't need touch/add any DNS record)
-  
+
  ```
- Type: CNAME 
+ Type: CNAME
  Hostname: *.your-domain.com
  Direct to: your-domain.com
- TTL(sec): 43200 
+ TTL(sec): 43200
  ```
 
 And now you are ready to run image on subdomain by:

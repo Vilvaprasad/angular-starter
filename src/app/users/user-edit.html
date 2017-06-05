@@ -1,0 +1,18 @@
+<md-dialog-content>
+  <md-input-container>
+    <input mdInput  placeholder="Date of Birth" [(ngModel)]="user.lastName"  />
+  </md-input-container>
+  <md-input-container>
+    <input mdInput  placeholder="First Name" [(ngModel)]="user.firstName" />
+  </md-input-container>
+  <md-input-container>
+    <input mdInput [mdDatepicker]="picker"  placeholder="Date of Birth" [(ngModel)]="user.dob" />
+    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+  </md-input-container>
+  <md-datepicker #picker></md-datepicker>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button color="primary">
+    Update
+  </button>
+</md-dialog-actions>
