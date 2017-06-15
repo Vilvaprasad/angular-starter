@@ -1,4 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser'
+/*
+ * Added Ng2Pagination module for pagination
+ */
+import {Ng2PaginationModule} from 'ng2-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
 import { MaterialModule, MdNativeDateModule } from '@angular/material'
@@ -29,6 +33,10 @@ import { AppState, InternalStateType } from './app.service'
 import { HomeComponent } from './home'
 import { UserComponent, UserEditComponent, UsersComponent } from './users'
 import { NoContentComponent } from './no-content'
+/*
+ *Added AboutComponent for about site page
+ */
+import { AboutComponent } from './about/about.component'
 import { XLargeDirective } from './home/x-large'
 
 import '../styles/styles.scss'
@@ -58,6 +66,7 @@ type StoreType = {
     AppComponent,
     HomeComponent,
     NoContentComponent,
+    AboutComponent,
     UserComponent,
     UserEditComponent,
     UsersComponent,
@@ -73,6 +82,7 @@ type StoreType = {
     HttpModule,
     MaterialModule,
     MdNativeDateModule,
+    Ng2PaginationModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   /**

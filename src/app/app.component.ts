@@ -25,7 +25,8 @@ import { AppState } from './app.service'
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Index
       </a>
-      <a [routerLink]=" ['./homes'] "
+      <!-- Renamed route from ./homes to ./home -->
+      <a [routerLink]=" ['./home'] "
         md-button
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Home
@@ -34,6 +35,12 @@ import { AppState } from './app.service'
         md-button
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Users
+      </a>
+      <!-- Added new route  ./about for about site page -->
+      <a [routerLink]=" ['./about'] "
+        md-button
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        About
       </a>
 
     </nav>

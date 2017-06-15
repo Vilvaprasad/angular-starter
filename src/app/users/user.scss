@@ -7,4 +7,20 @@
   .info-panel {
     flex: 1;
   }
+  
+/*
+Added .user class for user image ad round thumbnail
+*/
+.user {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+ }
+
+
 }
+

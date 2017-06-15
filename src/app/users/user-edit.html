@@ -1,9 +1,10 @@
+<!-- Here in button we have added method update on click and arranged the column in order -->
 <md-dialog-content>
   <md-input-container>
-    <input mdInput  placeholder="Date of Birth" [(ngModel)]="user.lastName"  />
+    <input mdInput  placeholder="First Name" [(ngModel)]="user.firstName"  />
   </md-input-container>
   <md-input-container>
-    <input mdInput  placeholder="First Name" [(ngModel)]="user.firstName" />
+    <input mdInput  placeholder="Last Name" [(ngModel)]="user.lastName" />
   </md-input-container>
   <md-input-container>
     <input mdInput [mdDatepicker]="picker"  placeholder="Date of Birth" [(ngModel)]="user.dob" />
@@ -12,7 +13,7 @@
   <md-datepicker #picker></md-datepicker>
 </md-dialog-content>
 <md-dialog-actions>
-  <button md-button color="primary">
+  <button md-button color="primary" (click) = "update()">
     Update
   </button>
 </md-dialog-actions>

@@ -1,21 +1,27 @@
-
+<!-- Added pagination and added one more emitter to userInfo for delete -->
 <md-card>
   <h3>Users</h3>
 
   <md-card-content>
-    <md-input-container>
-      <input mdInput  placeholder="Last Name" [(ngModel)]="filter.lastName" (ngModelChange)="filterUsers($event)" />
-    </md-input-container>
      <md-input-container>
       <input mdInput  placeholder="First Name" [(ngModel)]="filter.firstName" (ngModelChange)="filterUsers($event)" />
     </md-input-container>
+    
+    <md-input-container>
+      <input mdInput  placeholder="Last Name" [(ngModel)]="filter.lastName" (ngModelChange)="filterLastUsers($event)" />
+    </md-input-container>
+    
     <md-list>
-      <div *ngFor="let user of filteredUsers">
+      <div *ngFor="let user of filteredUsers | paginate: { itemsPerPage: 20, currentPage: p } " >
         <md-list-item>
-          <user-info [user]="user" (onEdit)="editUser($event)"></user-info>
+          <user-info [user]="user" (onEdit)="editUser(user)" (onDelete) = "deleteUser(user)" ></user-info>
         </md-list-item>
         <md-divider></md-divider>
       </div>
+        <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </md-list>
   </md-card-content>
 </md-card>
+<style>
+  
+</style>
