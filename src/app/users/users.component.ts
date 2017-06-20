@@ -42,35 +42,24 @@ export class UsersComponent implements OnInit {
         this.filteredUsers = this.users
       })
   }
-
-   /**
-   * Filters the users collection for  firstname 
+  
+  /**
+   * Filters the users collection  
    */
   filterUsers() {
   
-	  if (this.filter.firstName != null && this.filter.firstName != '') {
-	   	this.filteredUsers = this.users.filter(user => user.firstName.toString().toLowerCase().match(this.filter.firstName.toString().toLowerCase()))
-	   	
+	  if (this.filter.firstName != null && this.filter.firstName != '' && this.filter.lastName != null && this.filter.lastName != '') {
+	  	this.filteredUsers = this.users.filter(user => user.firstName.toString().toLowerCase().match(this.filter.firstName.toString().toLowerCase()))
+	  	this.filteredUsers = this.filteredUsers.filter(user => user.lastName.toString().toLowerCase().match(this.filter.lastName.toString().toLowerCase()))
+	  	
+	  } else  if (this.filter.firstName != null && this.filter.firstName != '') {
+	  	this.filteredUsers = this.users.filter(user => user.firstName.toString().toLowerCase().match(this.filter.firstName.toString().toLowerCase()))
+	  	
 	  } else if (this.filter.lastName != null && this.filter.lastName != '') {
-	  	this.filterLastUsers();
+	  	this.filteredUsers = this.users.filter(user => user.lastName.toString().toLowerCase().match(this.filter.lastName.toString().toLowerCase()))
 	  	
 	  } else {
 	  	this.filteredUsers = this.users
-	  }
-  }
-   /**
-   * Filters the users collection for  lastName 
-   */
-  filterLastUsers() {
-  
-	  if (this.filter.lastName != null && this.filter.lastName != '') {
-	   	this.filteredUsers = this.users.filter(user => user.lastName.toString().toLowerCase().match(this.filter.lastName.toString().toLowerCase()))
-	   	
-	  } else if (this.filter.firstName != null && this.filter.firstName != '') {
-	  	this.filterUsers();
-	  	
-	  } else {
-	 	 this.filteredUsers = this.users
 	  }
   }
 
